@@ -1,0 +1,18 @@
+---
+- name: Install and configure Apache with SSL
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install httpd and mod_ssl
+      package:
+        name:
+          - httpd
+          - mod_ssl
+        state: present
+
+    - name: Enable and start httpd service
+      service:
+        name: httpd
+        enabled: yes
+        state: started
+
