@@ -16,3 +16,17 @@
         enabled: yes
         state: started
 
+    - name: Open firewalld http service
+      firewalld:
+        name: http
+          state: enabled
+          permanent: true
+          immediate: true
+
+    - name: Open firewalld https service
+      firewalld:
+        name: https
+          state: enabled
+          permanent: true
+          immediate: true
+
